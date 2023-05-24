@@ -1,0 +1,40 @@
+#home {
+    color: black;
+}
+
+#navMain {
+    background-color: white;
+    height: 110px;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    /* backdrop-filter: blur(4px); */
+}
+
+#navBtnsRight {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+}
+
+.navBtn {
+    margin-left: 30px;
+}
+
+#heroVid {
+    width: 100vw;
+    min-height: 50vh;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+#sampleBlock {
+    text-align: center;
+    height: 200vh;
+    width: 100vw;
+    background-color: black;
+}
