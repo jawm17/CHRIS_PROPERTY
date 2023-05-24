@@ -24,7 +24,7 @@ export default function Home() {
     const style = {
         navStyle: {
             backgroundColor: navOpen ? "white" : "transparent",
-            color: navOpen ? "black" : "black",
+            color: navOpen ? "black" : "white",
         }
     }
 
