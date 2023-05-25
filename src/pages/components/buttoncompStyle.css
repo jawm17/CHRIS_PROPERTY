@@ -1,0 +1,40 @@
+.benifitsInfoContainer #button{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    height: 50px;
+    letter-spacing: .05em;
+    position: relative;
+    width: 189px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: all .15s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.benifitsInfoContainer #button{
+    font-family: josefin-sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.benifitsInfoContainer #button #border{
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   height: 100%;
+}
+.benifitsInfoContainer #button #borderBg{
+    right: 0 ;
+    bottom: 0;
+    margin: auto;
+    width: calc(100% - 6px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+}

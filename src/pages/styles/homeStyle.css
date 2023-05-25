@@ -1,0 +1,154 @@
+@import url("https://use.typekit.net/naj7mat.css");
+
+#home {
+  position: relative;
+  margin: 0 auto;
+  /* padding: 0 80px; */
+}
+/* hero */
+#hero {
+  width: 100vw;
+  height: 100vh;
+  background: url(https://21529253.fs1.hubspotusercontent-na1.net/hubfs/21529253/Website/central-park-spring.jpeg)
+    no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#heroContent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) -10.22%, transparent);
+}
+
+#heroTitle,
+#heroSubtitle {
+  color: white;
+  font-family: josefin-sans, sans-serif;
+  text-align: center;
+}
+
+/* ============= */
+/* Benifits */
+/* ============= */
+#benifitsContainer {
+  position: relative;
+  width: 100%;
+
+  padding-top: 150px;
+  padding-bottom: 100px;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, #b7a18b 45%);
+}
+.benifitsContent {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  width: 65%;
+  margin: auto;
+}
+.col {
+  flex: 1;
+}
+/* Info */
+.benifitsInfoContainer {
+  padding-top: 67px;
+}
+
+.benifitsInfoContainer h1 {
+  font-size: 56px;
+  font-weight: 500;
+  margin: 0 0 35px;
+  max-width: 350px;
+}
+.benifitsInfoContainer p {
+  margin-bottom: 75px;
+  font-size: 18px;
+  font-weight: 300;
+}
+#benifitOne .benifitsInfoContainer p{
+    max-width: 460px;
+}
+#benifitTwo .benifitsInfoContainer p{
+    max-width: 550px;
+}
+#benifitOne {
+  padding-bottom: 75px;
+}
+#benifitOne .benifitsInfoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+  text-align: end;
+  color: black;
+}
+#benifitTwo .benifitsInfoContainer {
+  justify-content: end;
+  color: white;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* Img */
+.benifitsImgsContainer {
+  position: relative;
+  min-height: 650px;
+}
+.imgContainer {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+#imgRight {
+  background: url(https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp)
+    no-repeat;
+}
+#imgLeft {
+  background: url(https://thewallace.com/hs-fs/hubfs/DSC06630-2%201.png?width=1262&height=1400&name=DSC06630-2%201.png)
+    no-repeat;
+}
+/* border */
+.imgBorder {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+#imgRightBorder {
+  top: -15px;
+  right: -15px;
+  border: solid 1px #b7a18b;
+}
+#imgLeftBorder {
+  bottom: -15px;
+  left: -15px;
+  border: solid 1px white;
+}
+/* ============= */
+/* Discover */
+/* ============= */
+#discoverContainer{
+    position: relative;
+    width: 100%;
+  
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+#discoverSliderContainer{
+    width: 50vw;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    background-color: red;
+}

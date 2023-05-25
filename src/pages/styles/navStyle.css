@@ -1,0 +1,8 @@
+
+#navMain {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+}
