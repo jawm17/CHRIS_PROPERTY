@@ -3,6 +3,7 @@
 #home {
   position: relative;
   margin: 0 auto;
+  padding-bottom: 150px;
   /* padding: 0 80px; */
 }
 /* hero */
@@ -42,8 +43,8 @@
   padding-top: 150px;
   padding-bottom: 100px;
 
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, #b7a18b 45%);
+  background: #fffefc ;
+  background: linear-gradient(180deg, #fffefc 45%, #b7a18b 45%);
 }
 .benifitsContent {
   position: relative;
@@ -136,19 +137,73 @@
   border: solid 1px white;
 }
 /* ============= */
-/* Discover */
+/* Carousel */
 /* ============= */
-#discoverContainer{
+#carouselContainer{
     position: relative;
     width: 100%;
-  
-    padding-top: 150px;
-    padding-bottom: 100px;
-}
-#discoverSliderContainer{
-    width: 50vw;
     height: 100vh;
-    margin: auto;
+    background-color: black;
+}
+/* ============= */
+/* Reviews */
+/* ============= */
+#carouselContainer{
     position: relative;
-    background-color: red;
+    width: 100%;
+    height: 100vh;
+}
+/* ============= */
+/* Map */
+/* ============= */
+#mapContainer{
+    width: 100vw;
+}
+
+.map-points-of-interest {
+    display: grid;
+    gap: 38px 145px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4,1fr);
+    list-style: none;
+    margin: 0 auto;
+    max-width: 944px;
+    padding: 0;
+}
+
+#localSiteContainer {
+    position: relative;
+    
+}
+.distance svg {
+    stroke: currentColor;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16px;
+}
+
+
+.map-points-of-interest .distance .drive:first-child:not(:last-child) {
+    border-right: 0.5px solid rgba(0,0,0,.2);
+    padding-right: 16px;
+}
+.map-points-of-interest .distance p {
+    margin: 0;
+    padding-left: 24px;
+    position: relative;
+}
+.map-points-of-interest .index {
+    font-size: 13px;
+    left: -36px;
+    line-height: 130%;
+    opacity: .5;
+    position: absolute;
+    top: 7px;
+}
+.map-points-of-interest li {
+    border-bottom: 0.5px solid rgba(0,0,0,.2);
+    padding-bottom: 16px;
+    position: relative;
 }

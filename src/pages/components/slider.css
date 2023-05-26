@@ -1,0 +1,75 @@
+/* ============= */
+/* Slider */
+/* ============= */
+.review-slider {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .reviews-container {
+    display: flex;
+    width: 300%;
+    min-height: 75vh;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .review {
+    background-color: white;
+    padding: 0 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+  }
+
+  
+  .review-icon {
+    width: 50px;
+    margin-bottom: 75px;
+  }
+  
+  .review-text {
+    width: 65%;
+    font-size: 28px;
+    margin-bottom: 75px;
+  }
+  
+  .review-author {
+    font-size: 18px;
+  }
+  
+  .slider-arrows {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    width: calc(100% - 160px);
+  }
+  
+  .prev-arrow,
+  .next-arrow {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 45px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .prev-arrow{
+    left: 80px;
+  }
+  .next-arrow {
+    right: 80px;
+
+  }
+  
+  .prev-arrow:hover,
+  .next-arrow:hover {
+    background-color: #ddd;
+  }

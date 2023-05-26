@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {BorderBG,Border} from "./borders.js";
+import {BorderBG,Border} from "./Borders.js";
 import "./buttoncompStyle.css";
 
 

@@ -1,7 +1,6 @@
 .benifitsInfoContainer #button{
     background-color: transparent;
     border: 0;
-    padding: 0;
     height: 50px;
     letter-spacing: .05em;
     position: relative;
@@ -10,10 +9,22 @@
     display: inline-block;
     text-align: center;
     transition: all .15s linear;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+#button h5{
+    position: absolute;
+    z-index:2;
+    right: 0;
+    left: 0;
+    top: 25%;
+}/* 
+.benifitsInfoContainer #button:hover{
+}
+.benifitsInfoContainer #button:hover #borderBg{
+    filter: invert(100);
+}
+.benifitsInfoContainer #button:hover h5{
+    filter: invert(100);
+} */
 .benifitsInfoContainer #button{
     font-family: josefin-sans, sans-serif;
     font-size: 16px;
@@ -31,7 +42,7 @@
     right: 0 ;
     bottom: 0;
     margin: auto;
-    width: calc(100% - 6px);
+    width: calc(100% - 8px);
     position: absolute;
     top: 0;
     left: 0;
