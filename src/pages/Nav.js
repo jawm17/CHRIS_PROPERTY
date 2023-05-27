@@ -24,20 +24,21 @@ export default function NavBar() {
     const style = {
         navStyle: {
             backgroundColor: navOpen ? "white" : "transparent",
-            color: navOpen ? "black" : "white",
+            color: navOpen ? "white" : "black",
+            color2: navOpen ? "black" : "white",
+            fillerBG: navOpen ? "black" : "white",
+            borderFiller: navOpen ? "black" : "white",
         },
-        navStyleLogo: {
-            opacity: navLogo ? "1" : "0",
-        }
     }
 
-    return (
-
-        <div id="navMain" style={style.navStyle}>
-            <div>&#9776;</div>
-            <div style={style.navStyleLogo}>Your Logo</div>
-            <ButtonComp word="CHECK AVAILABILITY"/>
-    
-        </div>
+ return (
+        <nav style={style.navStyle}>
+            <div id="navContainer" style={style.navStyle} >
+                <div id="nav">
+                <div id='div'>&#9776;</div>
+                <ButtonComp btnWidth="200px" Color={style.navStyle} word="CHECK AVAILABILITY" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller}/>
+            </div>
+            </div>
+        </nav>
     );
 }

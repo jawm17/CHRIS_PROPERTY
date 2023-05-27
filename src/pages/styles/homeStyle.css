@@ -3,7 +3,6 @@
 #home {
   position: relative;
   margin: 0 auto;
-  padding-bottom: 150px;
   /* padding: 0 80px; */
 }
 /* hero */
@@ -98,6 +97,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  padding-bottom: 75px;
 }
 /* Img */
 .benifitsImgsContainer {
@@ -154,12 +155,16 @@
     height: 100vh;
 }
 /* ============= */
-/* Map */
+/* Map / Localsites*/
 /* ============= */
+#locationContainer{
+    padding-bottom: 100px;
+}
+/* map */
 #mapContainer{
     width: 100vw;
+    padding-bottom: 100px;
 }
-
 .map-points-of-interest {
     display: grid;
     gap: 38px 145px;
@@ -170,10 +175,9 @@
     max-width: 944px;
     padding: 0;
 }
-
+/* sites */
 #localSiteContainer {
     position: relative;
-    
 }
 .distance svg {
     stroke: currentColor;
@@ -183,8 +187,6 @@
     top: 0;
     width: 16px;
 }
-
-
 .map-points-of-interest .distance .drive:first-child:not(:last-child) {
     border-right: 0.5px solid rgba(0,0,0,.2);
     padding-right: 16px;
@@ -206,4 +208,33 @@
     border-bottom: 0.5px solid rgba(0,0,0,.2);
     padding-bottom: 16px;
     position: relative;
+}
+.map-points-of-interest .text {
+    font-size: 32px;
+    font-family: josefin-sans, sans-serif;
+    font-weight: 400;
+}
+.map-points-of-interest .distance {
+    display: flex;
+}   
+.map-points-of-interest .distance svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+ .drive, .walk {
+    font-size: 16px ;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}   
+
+/* ============= *.
+/* Footer */
+/* ============= */
+#footerContainer{
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    background-color: black;
 }

@@ -1,8 +1,38 @@
 
-#navMain {
-    width: 100%;
-    position: fixed;
+nav {
+    height: 150px;
+    min-width: 100%;
     z-index: 999;
-    display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	text-align: center;
+}
+
+#navContainer {
+    position: fixed;
+    width: 100vw;
+	transition: all 0.5s ease-out;
+	/* border-bottom: 0.5px solid rgba(0,0,0,.4); */
+}
+
+#nav {
+    width: 85%;
+	height: 100px;
+    margin: auto;
+	display: flex;
     justify-content: space-between;
+	align-items: center;
+}
+#div {
+color: white;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+	font-family: josefin-sans, sans-serif;
+	font-size: 30px;
 }

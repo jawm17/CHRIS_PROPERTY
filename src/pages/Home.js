@@ -27,7 +27,7 @@ export default function Home() {
 
     return (
         <>
-            {/* <NavBar /> */}
+            <NavBar />
             <div id="home">
                 {/* Hero */}
                 <div id="hero">
@@ -50,7 +50,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>An Invitation To Unwind</h1>
                             <p>Akin to having your own pied-à-terre on Manhattan’s Upper West Side, our spacious accommodations are impeccably styled with residential comforts and modern amenities.</p>
-                            <ButtonComp wordColor="black" word="View House" filler="black" fillerBG="white" />
+                            <ButtonComp wordColor="black" word="View House" filler="white" borderFiller="white" />
                         </div>
                         <div className="benifitsImgsContainer col">
                             <img className="imgContainer" id="imgRight" src="https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp"></img>
@@ -66,7 +66,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>The Wallace Lounge</h1>
                             <p>The Wallace Lounge is a sophisticated and elegant establishment, offering a unique and refined drinking and dining experience. With a stylish and modern design, the lounge provides a welcoming and relaxed atmosphere, making it the perfect spot for a night out with friends, a romantic evening, or a special occasion.</p>
-                            <ButtonComp wordColor="white" word="View House" filler="white" fillerBG="none" />
+                            <ButtonComp wordColor="white" word="View House" filler="white" borderFiller="none" />
                         </div>
                     </div>
                     {/* Benifits 1 */}
@@ -86,8 +86,8 @@ export default function Home() {
                         <Map />
                     </div>
                     <div id="localSiteContainer">
-                        <ul id="map-points-of-interest-dnd_area-module-4" class="map-points-of-interest">
-
+                        {/* come back and make it a comp */}
+                        <ul id="map-points-of-interest-dnd_area-module-4" className="map-points-of-interest">
                             <li>
                                 <div className="index">01 /</div>
                                 <p className="text">Museum of Natural History</p>
@@ -177,7 +177,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/*============== Footer/Contact ================== */}
-                <div id="footerContainer">
+                <footer id="footerContainer">
                     {/* margin Auto */}
                     <div id="footerContent">
                         <div id="contactContainer">
@@ -200,7 +200,7 @@ export default function Home() {
                             <div></div>
                         </div>
                     </div>
-                </div>
+                </footer>
             </div>
         </>
     );

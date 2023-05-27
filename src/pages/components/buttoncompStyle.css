@@ -1,51 +1,37 @@
-.benifitsInfoContainer #button{
-    background-color: transparent;
-    border: 0;
-    height: 50px;
-    letter-spacing: .05em;
-    position: relative;
-    width: 189px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    transition: all .15s linear;
-}
-#button h5{
-    position: absolute;
-    z-index:2;
-    right: 0;
-    left: 0;
-    top: 25%;
-}/* 
-.benifitsInfoContainer #button:hover{
-}
-.benifitsInfoContainer #button:hover #borderBg{
-    filter: invert(100);
-}
-.benifitsInfoContainer #button:hover h5{
-    filter: invert(100);
-} */
-.benifitsInfoContainer #button{
-    font-family: josefin-sans, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-}
-.benifitsInfoContainer #button #border{
-   width: 100%;
-   position: absolute;
-   top: 0;
-   left: 0;
-   display: block;
-   height: 100%;
-}
-.benifitsInfoContainer #button #borderBg{
-    right: 0 ;
-    bottom: 0;
-    margin: auto;
-    width: calc(100% - 8px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 100%;
-}
+ #button {
+     position: relative;
+     height: 58px;
+     width: 199px;
+ }
+
+ #button h5 {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 2;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+
+     font-family: josefin-sans, sans-serif;
+     font-size: 10px;
+     font-weight: 400;
+ }
+
+ #border {
+     height: 58px;
+     width: 199px;
+ }
+
+ #borderBg {
+     position: absolute;
+     z-index: 1;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     height: 49px;
+     width: 193px;
+ }
