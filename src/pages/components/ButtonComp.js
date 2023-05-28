@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BorderBG, Border } from "./Borders.js";
+import BorderBg from "./BorderBg.js";
+import Border from "./Border.js";
 import "./buttoncompStyle.css";
 
 export default function ButtonComp(props) {
@@ -8,7 +9,7 @@ export default function ButtonComp(props) {
       <div id="button">
         <h5 style={{ color: props.wordColor, fontSize: props.fontSize}}>{props.word}</h5>
         <Border borderFiller={props.borderFiller} />
-        <BorderBG fillerBG={props.fillerBG} />
+        <BorderBg fillerBG={props.fillerBG} />
       </div>
     </>
   );
