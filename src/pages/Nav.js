@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/navStyle.css";
+import sampleLogo from "../assets/logo-no-background.png";
 import ButtonComp from "./components/ButtonComp.js";
 
 export default function NavBar() {
@@ -34,7 +35,9 @@ export default function NavBar() {
         <nav style={style.navStyle}>
             <div id="navContainer" style={style.navStyle} >
                 <div id="nav">
-                    <div>&#9776;</div>
+                    <div>
+                        <img src={sampleLogo} id="sampleLogo"></img>
+                    </div>
                     <ButtonComp word="CHECK AVAILABILITY" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller} />
                 </div>
             </div>
