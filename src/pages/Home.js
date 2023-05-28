@@ -2,12 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./styles/homeStyle.css";
 import NavBar from "./Nav";
 import ButtonComp from "./components/ButtonComp.js";
-import Map from "./components/Map.js";
+import MapComponent from "./components/MapComponent.js";
 import Slider from "./components/Slider";
 import Footer from "./Footer";
+import ImageCarousel from "./components/ImageCarousel";
 
 
 export default function Home() {
+    const [muted, setMuted] = useState(true);
+    const [mapCenter, setMapCenter] = useState([27.797673835318935, -97.08721339030625]);
+    const Location1 = [27.829460881886035, -97.08473664349712]; // Port A Nature Preserve // 8 Min drive // 1 hr walk
+    const Location2 = [27.79685292375124, -97.08761306786688] // Palmilla Beach Golf Club // 3 min drive // 5 min walk
+    const Location3 = [27.80780654696457, -97.0863515205597] // The Phoenix Restaurant & Bar // 4 min drive // 18 min walk
+    const Location4 = [27.67468665345304, -97.17639163670216] // Mustang Island State Park // 12 min drive // 3 hr walk
+
     const reviews = [
         {
             icon: "?",
@@ -34,6 +42,22 @@ export default function Home() {
                 <div id="hero">
                     {/* //! come back and put video in */}
                     {/* <video></video> */}
+                    <video id="heroVideo" autoPlay={true} muted={muted} loop>
+                        <source src={"https://firebasestorage.googleapis.com/v0/b/ethresources-1ed10.appspot.com/o/trim.F9D3BA54-F497-441B-A4C2-1FF2FB88A376.MOV?alt=media&token=12ca1bd4-04e9-4455-8301-f72051eca4d3"} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div id="muteBtn" onClick={() => setMuted(!muted)}>
+                        {!muted ?
+                            <svg xmlns="http://www.w3.org/2000/svg" className="soundIcon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                            </svg>
+                            :
+                            <svg xmlns="http://www.w3.org/2000/svg" className="soundIcon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6l4.72-4.72a.75.75 0 011.28.531V19.94a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.506-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.395C2.806 8.757 3.63 8.25 4.51 8.25H6.75z" />
+                            </svg>
+
+                        }
+                    </div>
                     <div id="heroContent">
                         <div id="heroTitle">
                             <h3>the</h3>
@@ -66,14 +90,17 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>The Wallace Lounge</h1>
                             <p>The Wallace Lounge is a sophisticated and elegant establishment, offering a unique and refined drinking and dining experience. With a stylish and modern design, the lounge provides a welcoming and relaxed atmosphere, making it the perfect spot for a night out with friends, a romantic evening, or a special occasion.</p>
-                            <ButtonComp fontSize="16px"wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
+                            <ButtonComp fontSize="16px" wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
                         </div>
                     </div>
                     {/* Benifits 1 */}
                 </div>
                 {/*============== Carousel ================== */}
                 <div id="carouselContainer">
-
+                    <div id="carouselTitle">
+                        The House
+                    </div>
+                    <ImageCarousel />
                 </div>
                 {/*============== Reviews ================== */}
                 <div id="reviewsContainer">
@@ -83,82 +110,52 @@ export default function Home() {
                 <div id="locationContainer">
                     {/* call api */}
                     <div id="mapContainer">
-                        <Map />
+                        {/* <div id="carouselTitle">
+                        Locations
+                    </div> */}
+                        <MapComponent mapCenter={mapCenter} />
                     </div>
                     <div id="localSiteContainer">
                         {/* come back and make it a comp */}
                         <ul id="map-points-of-interest-dnd_area-module-4" className="map-points-of-interest">
-                            <li>
+                            <li onClick={() => setMapCenter(Location1)} onMouseEnter={() => setMapCenter(Location1)} onMouseLeave={() => setMapCenter(null)}>
                                 <div className="index">01 /</div>
-                                <p className="text">Museum of Natural History</p>
+                                <p className="text">Port A Nature Preserve</p>
                                 <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>4 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>12 min walk</p>
+                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>8 min drive</p>
+                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>1 hr walk</p>
                                 </div>
                             </li>
 
-                            <li>
+                            <li onClick={() => setMapCenter(Location2)} onMouseEnter={() => setMapCenter(Location2)} onMouseLeave={() => setMapCenter(null)}>
                                 <div className="index">02 /</div>
-                                <p className="text">Central Park</p>
+                                <p className="text">Palmilla Beach Golf Club</p>
+                                <div className="distance">
+                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg> 3 min drive</p>
+                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>5 min walk</p>
+                                </div>
+                            </li>
+
+                            <li onClick={() => setMapCenter(Location3)} onMouseEnter={() => setMapCenter(Location3)} onMouseLeave={() => setMapCenter(null)}>
+                                <div className="index">03 /</div>
+                                <p className="text">The Phoenix Restaurant & Bar</p>
                                 <div className="distance">
                                     <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>4 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>11 min walk</p>
+                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>18 min walk</p>
                                 </div>
                             </li>
 
-                            <li>
-                                <div className="index">03 /</div>
-                                <p className="text">Lincoln Center</p>
-                                <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>5 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>7 min walk</p>
-                                </div>
-                            </li>
-
-                            <li>
+                            <li onClick={() => setMapCenter(Location4)} onMouseEnter={() => setMapCenter(Location4)} onMouseLeave={() => setMapCenter(null)}>
                                 <div className="index">04 /</div>
-                                <p className="text">Columbia University</p>
+                                <p className="text">Mustang Island State Park</p>
                                 <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>7 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>38 min walk</p>
+                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>12 min drive</p>
+                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>3 hr walk</p>
                                 </div>
                             </li>
 
-                            <li>
-                                <div className="index">05 /</div>
-                                <p className="text">Riverside Park</p>
-                                <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>5 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>13 min walk</p>
-                                </div>
-                            </li>
 
-                            <li>
-                                <div className="index">06 /</div>
-                                <p className="text">Columbus Circle</p>
-                                <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>6 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>22 min walk</p>
-                                </div>
-                            </li>
 
-                            <li>
-                                <div className="index">07 /</div>
-                                <p className="text">St. John the Divine</p>
-                                <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>7 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>40 min walk</p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div className="index">08 /</div>
-                                <p className="text">The Juilliard School</p>
-                                <div className="distance">
-                                    <p className="drive"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 11.333a1 1 0 0 0 1-1v-1.5c0-.32-.127-.627-.353-.853L13.5 6.333h-11L.853 7.98a1.207 1.207 0 0 0-.353.853v1.5a1 1 0 0 0 1 1h13Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M.608 8.333h2.478a1 1 0 0 1 .707.293l.707.707M15.392 8.333h-2.478a1 1 0 0 0-.707.293l-.707.707M2.5 6.333l1.133-3.026a1.5 1.5 0 0 1 1.406-.974h5.922a1.5 1.5 0 0 1 1.404.974l1.133 3.026H2.5ZM2.5 6.333l-1-1h-1M13.5 6.333l1-1h1M1.5 11.333v1a1 1 0 0 0 2 0v-1h-2ZM14.5 11.333v1a1 1 0 0 1-2 0v-1h2Z"></path></svg>6 min drive</p>
-                                    <p className="walk"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke-linecap="round" stroke-linejoin="round" d="M7.4 4.12a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM12.1 7.867a1.492 1.492 0 0 1-1.17-.562A5.133 5.133 0 0 0 6.9 5.367a4.004 4.004 0 0 0-4 4 1 1 0 1 0 2 0 2.004 2.004 0 0 1 1.5-1.934v.334a10.878 10.878 0 0 1-1.833 6.05 1 1 0 1 0 1.667 1.11 12.932 12.932 0 0 0 1.5-3.06 5.359 5.359 0 0 1 2.219 2.822 1 1 0 1 0 1.896-.633 7.358 7.358 0 0 0-3.617-4.205c.113-.689.169-1.386.169-2.084v-.02c.374.201.703.477.968.81a3.481 3.481 0 0 0 2.734 1.312 1 1 0 1 0 0-2l-.002-.002Z"></path></svg>14 min walk</p>
-                                </div>
-                            </li>
 
                         </ul>
                     </div>
@@ -177,7 +174,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/*============== Footer/Contact ================== */}
-              <Footer/>
+                <Footer />
             </div>
         </>
     );

@@ -5,14 +5,15 @@
   margin: 0 auto;
   /* padding: 0 80px; */
 }
+
 /* hero */
 #hero {
   width: 100vw;
   height: 100vh;
-  background: url(https://21529253.fs1.hubspotusercontent-na1.net/hubfs/21529253/Website/central-park-spring.jpeg)
-    no-repeat;
+  background: url(https://21529253.fs1.hubspotusercontent-na1.net/hubfs/21529253/Website/central-park-spring.jpeg) no-repeat;
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
 #heroContent {
@@ -22,8 +23,43 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) -10.22%, transparent);
+  position: absolute;
+  z-index: 5;
 }
+
+#heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+#muteBtn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  bottom: 35px;
+  right: 5%;
+  cursor: pointer;
+}
+
+.soundIcon {
+  width: 20px;
+}
+
+@media only screen and (max-width: 1050px) {
+  #hero {
+    height: 60vh;
+  }
+}
+
 
 #heroTitle,
 #heroSubtitle {
@@ -42,9 +78,10 @@
   padding-top: 150px;
   padding-bottom: 100px;
 
-  background: #fffefc ;
+  background: #fffefc;
   background: linear-gradient(180deg, #fffefc 45%, #b7a18b 45%);
 }
+
 .benifitsContent {
   position: relative;
   display: flex;
@@ -53,9 +90,11 @@
   width: 65%;
   margin: auto;
 }
+
 .col {
   flex: 1;
 }
+
 /* Info */
 .benifitsInfoContainer {
   padding-top: 67px;
@@ -67,20 +106,25 @@
   margin: 0 0 35px;
   max-width: 350px;
 }
+
 .benifitsInfoContainer p {
   margin-bottom: 75px;
   font-size: 18px;
   font-weight: 300;
 }
-#benifitOne .benifitsInfoContainer p{
-    max-width: 460px;
+
+#benifitOne .benifitsInfoContainer p {
+  max-width: 460px;
 }
-#benifitTwo .benifitsInfoContainer p{
-    max-width: 550px;
+
+#benifitTwo .benifitsInfoContainer p {
+  max-width: 550px;
 }
+
 #benifitOne {
   padding-bottom: 75px;
 }
+
 #benifitOne .benifitsInfoContainer {
   flex: 1;
   display: flex;
@@ -90,6 +134,7 @@
   text-align: end;
   color: black;
 }
+
 #benifitTwo .benifitsInfoContainer {
   justify-content: end;
   color: white;
@@ -100,25 +145,28 @@
 
   padding-bottom: 75px;
 }
+
 /* Img */
 .benifitsImgsContainer {
   position: relative;
   min-height: 650px;
 }
+
 .imgContainer {
   position: absolute;
   z-index: 2;
   height: 100%;
   width: 100%;
 }
+
 #imgRight {
-  background: url(https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp)
-    no-repeat;
+  background: url(https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp) no-repeat;
 }
+
 #imgLeft {
-  background: url(https://thewallace.com/hs-fs/hubfs/DSC06630-2%201.png?width=1262&height=1400&name=DSC06630-2%201.png)
-    no-repeat;
+  background: url(https://thewallace.com/hs-fs/hubfs/DSC06630-2%201.png?width=1262&height=1400&name=DSC06630-2%201.png) no-repeat;
 }
+
 /* border */
 .imgBorder {
   position: absolute;
@@ -127,104 +175,145 @@
   width: 100%;
   background-color: transparent;
 }
+
 #imgRightBorder {
   top: -15px;
   right: -15px;
   border: solid 1px #b7a18b;
 }
+
 #imgLeftBorder {
   bottom: -15px;
   left: -15px;
   border: solid 1px white;
 }
+
 /* ============= */
 /* Carousel */
 /* ============= */
-#carouselContainer{
+/* #carouselContainer{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background-color: black;
-}
+} */
 /* ============= */
 /* Reviews */
 /* ============= */
-#carouselContainer{
-    position: relative;
-    width: 100%;
-    height: 100vh;
+#carouselContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 75px;
+  margin-bottom: 25px;
 }
+
+#carouselTitle {
+  font-size: 56px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /* ============= */
 /* Map / Localsites*/
 /* ============= */
-#locationContainer{
-    padding-bottom: 100px;
+#locationContainer {
+  padding-bottom: 100px;
 }
+
 /* map */
-#mapContainer{
-    width: 100vw;
-    padding-bottom: 100px;
+#mapContainer {
+  width: 100vw;
+  padding-bottom: 100px;
 }
+
 .map-points-of-interest {
+  display: grid;
+  gap: 38px 145px;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  list-style: none;
+  margin: 0 auto;
+  max-width: 944px;
+  padding: 0;
+}
+
+@media only screen and (max-width: 1050px) {
+  .map-points-of-interest {
     display: grid;
     gap: 38px 145px;
     grid-auto-flow: column;
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
     list-style: none;
     margin: 0 auto;
     max-width: 944px;
     padding: 0;
+    padding-left: 50px;
+    max-width: 70vw;
+  }
 }
+
 /* sites */
 #localSiteContainer {
-    position: relative;
+  position: relative;
+  margin-bottom: 50px;
 }
+
 .distance svg {
-    stroke: currentColor;
-    height: auto;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 16px;
+  stroke: currentColor;
+  height: auto;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16px;
 }
+
 .map-points-of-interest .distance .drive:first-child:not(:last-child) {
-    border-right: 0.5px solid rgba(0,0,0,.2);
-    padding-right: 16px;
+  border-right: 0.5px solid rgba(0, 0, 0, .2);
+  padding-right: 16px;
 }
+
 .map-points-of-interest .distance p {
-    margin: 0;
-    padding-left: 24px;
-    position: relative;
+  margin: 0;
+  padding-left: 24px;
+  position: relative;
 }
+
 .map-points-of-interest .index {
-    font-size: 13px;
-    left: -36px;
-    line-height: 130%;
-    opacity: .5;
-    position: absolute;
-    top: 7px;
+  font-size: 13px;
+  left: -36px;
+  line-height: 130%;
+  opacity: .5;
+  position: absolute;
+  top: 7px;
 }
+
 .map-points-of-interest li {
-    border-bottom: 0.5px solid rgba(0,0,0,.2);
-    padding-bottom: 16px;
-    position: relative;
+  border-bottom: 0.5px solid rgba(0, 0, 0, .2);
+  padding-bottom: 16px;
+  position: relative;
 }
+
 .map-points-of-interest .text {
-    font-size: 32px;
-    font-family: josefin-sans, sans-serif;
-    font-weight: 400;
+  font-size: 32px;
+  font-family: josefin-sans, sans-serif;
+  font-weight: 400;
 }
+
 .map-points-of-interest .distance {
-    display: flex;
-}   
-.map-points-of-interest .distance svg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}   
- .drive, .walk {
-    font-size: 16px ;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-}   
+  display: flex;
+}
+
+.map-points-of-interest .distance svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drive,
+.walk {
+  font-size: 16px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
