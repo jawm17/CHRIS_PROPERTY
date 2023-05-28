@@ -42,7 +42,7 @@ export default function Home() {
                 <div id="hero">
                     {/* //! come back and put video in */}
                     {/* <video></video> */}
-                    <video id="heroVideo" autoPlay={true} muted={muted} loop>
+                    <video id="heroVideo" autoPlay={true} muted={muted} loop webkit-playsinline playsinline>
                         <source src={"https://firebasestorage.googleapis.com/v0/b/ethresources-1ed10.appspot.com/o/trim.F9D3BA54-F497-441B-A4C2-1FF2FB88A376.MOV?alt=media&token=12ca1bd4-04e9-4455-8301-f72051eca4d3"} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
