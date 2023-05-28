@@ -61,7 +61,7 @@ export default function Home() {
                     <div id="heroContent">
                         <div id="heroTitle">
                             <h3>the</h3>
-                            <h1>wallance</h1>
+                            <h1>peppervine</h1>
                         </div>
                         <div id="heroSubtitle">
                             <p>luxury hotel in new york city</p>
