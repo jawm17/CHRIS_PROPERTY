@@ -2,7 +2,7 @@
 /* Footer */
 /* ============= */
 :root{
-    --gray: #292929;
+    --gray: #5a5959;
 }
 #footerContainer {
     position: relative;
@@ -58,16 +58,17 @@
 }
 
 label {
-    color: gray;
+    color: var(--gray);
     margin-bottom: 10px;
 
 }
 
 input,
 textarea {
+
     border: none;
     color: white;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--gray);
     font-size: 16px;
     width: 100%;
     padding: 10px;
@@ -76,7 +77,7 @@ textarea {
 
 textarea {
     resize: none; /* Prevent resizing */
-    border: 1px solid #ccc;
+    border: 1px solid var(--gray);
 
   }
 /* Footer Footer */
@@ -95,7 +96,7 @@ textarea {
     width: 40%;
 }
 #footerFooter p {
-    color: gray;
+    color: var(--gray);
 }
 /* icons */
 #footerIcons {

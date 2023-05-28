@@ -24,7 +24,7 @@ export default function Footer() {
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-                    <ButtonComp fontSize="16px" wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
+                    <ButtonComp fontSize="16px" wordColor="#5a5959" word="View House" fillerBG="none" borderFiller="#5a5959" />
                 </div>
                 <div id="footerFooter">
                     <div id="footerWords">
