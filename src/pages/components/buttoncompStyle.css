@@ -1,7 +1,7 @@
  #button {
      position: relative;
      height: 58px;
-     width: 199px;
+     width: 200px;
  }
 
  #button h5 {
@@ -17,7 +17,7 @@
      transform: translate(-50%, -50%);
 
      font-family: josefin-sans, sans-serif;
-     font-size: 10px;
+     font-size: 12px;
      font-weight: 400;
  }
 

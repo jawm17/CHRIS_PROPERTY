@@ -228,13 +228,3 @@
     display: flex;
     align-items: center;
 }   
-
-/* ============= *.
-/* Footer */
-/* ============= */
-#footerContainer{
-    position: relative;
-    height: 75vh;
-    width: 100%;
-    background-color: black;
-}

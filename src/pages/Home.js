@@ -4,6 +4,7 @@ import NavBar from "./Nav";
 import ButtonComp from "./components/ButtonComp.js";
 import Map from "./components/Map.js";
 import Slider from "./components/Slider";
+import Footer from "./Footer";
 
 
 export default function Home() {
@@ -50,8 +51,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>An Invitation To Unwind</h1>
                             <p>Akin to having your own pied-à-terre on Manhattan’s Upper West Side, our spacious accommodations are impeccably styled with residential comforts and modern amenities.</p>
-                            <ButtonComp wordColor="black" word="View House" filler="white" borderFiller="white" />
-                        </div>
+                            <ButtonComp fontSize="14px" wordColor="black" word="View House" fillerBG="none" borderFiller="black" />                        </div>
                         <div className="benifitsImgsContainer col">
                             <img className="imgContainer" id="imgRight" src="https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp"></img>
                             <div className="imgBorder" id="imgRightBorder"></div>
@@ -66,7 +66,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>The Wallace Lounge</h1>
                             <p>The Wallace Lounge is a sophisticated and elegant establishment, offering a unique and refined drinking and dining experience. With a stylish and modern design, the lounge provides a welcoming and relaxed atmosphere, making it the perfect spot for a night out with friends, a romantic evening, or a special occasion.</p>
-                            <ButtonComp wordColor="white" word="View House" filler="white" borderFiller="none" />
+                            <ButtonComp fontSize="16px"wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
                         </div>
                     </div>
                     {/* Benifits 1 */}
@@ -177,30 +177,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/*============== Footer/Contact ================== */}
-                <footer id="footerContainer">
-                    {/* margin Auto */}
-                    <div id="footerContent">
-                        <div id="contactContainer">
-                            <h1></h1>
-                            {/* inputs for contacts */}
-                            <button></button>
-                        </div>
-                        <div id="footerLinksContainer">
-                            <ul>
-                                <li></li>
-                            </ul>
-                            <p></p>
-                            <p></p>
-                        </div>
-                        <div id="footerInfoContainer">
-                            {/* address */}
-                            <p></p>
-                            {/* icons */}
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                </footer>
+              <Footer/>
             </div>
         </>
     );

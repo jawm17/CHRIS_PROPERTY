@@ -6,7 +6,7 @@ export default function ButtonComp(props) {
   return (
     <>
       <div id="button">
-        <h5 style={{ color: props.wordColor }}>{props.word}</h5>
+        <h5 style={{ color: props.wordColor, fontSize: props.fontSize}}>{props.word}</h5>
         <Border borderFiller={props.borderFiller} />
         <BorderBG fillerBG={props.fillerBG} />
       </div>
