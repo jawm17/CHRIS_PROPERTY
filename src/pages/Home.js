@@ -112,7 +112,7 @@ export default function Home() {
                     <div className="benifitsContent" id="benifitOne">
                         <div className="benifitsInfoContainer col">
                             <h1>An Invitation To Unwind</h1>
-                            <p>Akin to having your own pied-à-terre on Manhattan’s Upper West Side, our spacious accommodations are impeccably styled with residential comforts and modern amenities.</p>
+                            <p>Our spacious accommodations are impeccably styled with residential comforts and modern amenities. At the end of the day, when you are ready to retreat from the hustle and bustle, this is the ideal place to relax & recharge.</p>
                             <ButtonComp fontSize="14px" wordColor="black" word="View House" fillerBG="none" borderFiller="black" />                        </div>
                         <div className="benifitsImgsContainer col">
                             <img className="imgContainer" id="imgRight" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-41e0557b-513a-4bb8-a85c-280fb2230abe.jpg"></img>
@@ -147,7 +147,7 @@ export default function Home() {
                             </div>
                             <div id="sectionFlex">
                                 <div className="sectionSub">
-                                    Our location places guests within easy reach of the endless culture, first-class entertainment and impressive landmarks that make Port Aransas an excellent destination.
+                                Our spacious accommodations are impeccably styled with residential comforts and modern amenities. At the end of the day, when you are ready to retreat from the hustle and bustle, this is the ideal place to relax & recharge.
                                 </div>
                             </div>
                         </div>
