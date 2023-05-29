@@ -10,7 +10,7 @@
 #hero {
   width: 100vw;
   height: 100vh;
-  background: url(https://21529253.fs1.hubspotusercontent-na1.net/hubfs/21529253/Website/central-park-spring.jpeg) no-repeat;
+  background: url(https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-3f1f51f6-bc3a-4d28-bacf-b0c71161c7e3.jpeg) no-repeat;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -25,6 +25,7 @@
   flex-direction: column;
   position: absolute;
   z-index: 5;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.336) 0, rgba(0, 0, 0, 0) 100%)
 }
 
 #heroVideo {
@@ -56,7 +57,7 @@
 
 @media only screen and (max-width: 1050px) {
   #hero {
-    height: 60vh;
+    height: 85vh;
   }
 }
 
@@ -68,10 +69,49 @@
   text-align: center;
 }
 
+#heroTitle {
+  font-weight: 500;
+  font-size: 80px;
+}
+
+#theLabel {
+  font-size: 22px;
+}
+
+#mainTitle {
+  margin-top: -30px;
+}
+
+#heroSubtitle {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 650px) {
+  #heroTitle {
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  #theLabel {
+    font-size: 18px;
+  }
+
+  #mainTitle {
+    margin-top: -15px;
+  }
+
+  #heroSubtitle {
+    margin-top: 10px;
+    font-size: 18px;
+    display: none;
+  }
+}
+
 /* ============= */
 /* Benifits */
 /* ============= */
-#benifitsContainer {
+#benifitsContainerLarge {
   position: relative;
   width: 100%;
 
@@ -157,6 +197,7 @@
   z-index: 2;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 #imgRight {
@@ -188,6 +229,114 @@
   border: solid 1px white;
 }
 
+/* SMall Benefirts ================================================= */
+#benefitsContainerSmall {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+
+.topImageSection {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+.topImageBorder {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  top: -12px;
+  right: -12px;
+  border: solid 1px #b7a18b;
+}
+
+#topImage {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#topSectionOuter {}
+
+#topSection {
+  text-align: right;
+  width: 90vw;
+  margin-left: 5vw;
+  position: relative;
+}
+
+.sectionHeader {
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+#sectionFlex {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.sectionSub {
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+#bottomSectionOuter {
+  background-color: #b7a18b;
+  padding-top: 50px;
+  margin-top: 80px;
+  padding-bottom: 80px;
+}
+
+#bottomSection {
+  width: 90vw;
+  margin-left: 5vw;
+  position: relative;
+  color: white;
+}
+
+#bottomSection #sectionFlex {
+  justify-content: start;
+}
+
+#bottomSection .topImageBorder {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  top: 12px;
+  right: 12px;
+  border: solid 1px white;
+}
+
+
+@media only screen and (max-width: 1250px) {
+  #benifitsContainerLarge {
+    display: none;
+  }
+
+  #benefitsContainerSmall {
+    display: inline-block;
+  }
+
+  .map-points-of-interest .text {
+    font-size: 32px;
+    font-family: josefin-sans, sans-serif;
+    font-weight: 400;
+  }
+
+}
+
 /* ============= */
 /* Carousel */
 /* ============= */
@@ -203,7 +352,7 @@
 #carouselContainer {
   position: relative;
   width: 100%;
-  margin-top: 75px;
+  margin-top: 50px;
   margin-bottom: 25px;
 }
 
@@ -214,17 +363,36 @@
   margin-bottom: 50px;
 }
 
+@media only screen and (max-width: 1250px) {
+  #carouselContainer {
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
+
+  #carouselTitle {
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
 /* ============= */
 /* Map / Localsites*/
 /* ============= */
 #locationContainer {
-  padding-bottom: 100px;
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 /* map */
 #mapContainer {
   width: 100vw;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .map-points-of-interest {
@@ -237,22 +405,6 @@
   max-width: 944px;
   padding: 0;
 }
-
-@media only screen and (max-width: 1050px) {
-  .map-points-of-interest {
-    display: grid;
-    gap: 38px 145px;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(4, 1fr);
-    list-style: none;
-    margin: 0 auto;
-    max-width: 944px;
-    padding: 0;
-    padding-left: 50px;
-    max-width: 70vw;
-  }
-}
-
 /* sites */
 #localSiteContainer {
   position: relative;
@@ -316,4 +468,63 @@
   font-weight: 300;
   display: flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 1050px) {
+  .map-points-of-interest {
+    display: grid;
+    gap: 38px 145px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, 1fr);
+    list-style: none;
+    margin: 0 auto;
+    max-width: 944px;
+    padding: 0;
+    padding-left: 50px;
+    max-width: 70vw;
+  }
+
+  .map-points-of-interest .text {
+    font-size: 22px;
+    font-family: josefin-sans, sans-serif;
+    font-weight: 400;
+  }
+  .map-points-of-interest li {
+    border-bottom: 0.5px solid rgba(0, 0, 0, .2);
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+}
+
+
+#virtualTour {
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+
+#matterport {
+  width: 90vw;
+  border-radius: 8px;
+  margin-left: 5vw;
+}
+
+#newFooter {
+  width: 100vw;
+  height: 80px;
+  background-color: black;
+  color: white;
+}
+
+#newFooterInner {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  margin-left: 5vw;
+  height: 100%;
+  align-items: center;
+}
+
+#phone {
+  margin-right: 20px;
 }

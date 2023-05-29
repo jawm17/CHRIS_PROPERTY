@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/navStyle.css";
-import sampleLogo from "../assets/logo-no-background.png";
+import whiteLogo from "../assets/logo-white-noBg.png";
+import blackLogo from "../assets/logo-black-noBg.png";
 import ButtonComp from "./components/ButtonComp.js";
 
 export default function NavBar() {
@@ -28,6 +29,7 @@ export default function NavBar() {
             color: navOpen ? "white" : "black",
             fillerBG: navOpen ? "black" : "white",
             borderFiller: navOpen ? "black" : "white",
+            borderBottom: navOpen ? "0.5px solid rgba(0,0,0,.4)" : "none"
         },
     }
 
@@ -36,9 +38,19 @@ export default function NavBar() {
             <div id="navContainer" style={style.navStyle} >
                 <div id="nav">
                     <div>
-                        <img src={sampleLogo} id="sampleLogo"></img>
+                        {
+                            navOpen ? <img src={blackLogo} id="sampleLogo"></img> : <img src={whiteLogo} id="sampleLogo"></img>
+                        }
                     </div>
-                    <ButtonComp word="CHECK AVAILABILITY" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller} />
+                    {/* <div>
+                        <div>
+                            the
+                        </div>
+                        <div>
+                            peppervine
+                        </div>
+                    </div> */}
+                    <ButtonComp word="BOOK NOW" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller}/>
                 </div>
             </div>
         </nav>

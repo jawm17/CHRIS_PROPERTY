@@ -73,3 +73,52 @@
   .next-arrow:hover {
     background-color: #ddd;
   }
+
+  @media only screen and (max-width: 900px) {
+    .review {
+      background-color: white;
+      padding: 0 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+    .slider-arrows {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+    .review-text {
+      width: 65%;
+      font-size: 16px;
+      margin-bottom: 75px;
+    }
+
+    .review-author {
+      font-size: 14px;
+    }
+    .review-icon {
+      width: 40px;
+      margin-bottom: 25px;
+    }
+    .prev-arrow,
+    .next-arrow {
+      background-color: transparent;
+      border: none;
+      color: black;
+      font-size: 25px;
+      padding: 0.5rem 0.5rem;
+      cursor: pointer;
+      transition: none;
+    }
+    .prev-arrow:hover,
+    .next-arrow:hover {
+      background-color: transparent;
+    }
+  }

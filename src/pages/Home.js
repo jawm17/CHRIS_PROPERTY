@@ -6,6 +6,7 @@ import MapComponent from "./components/MapComponent.js";
 import Slider from "./components/Slider";
 import Footer from "./Footer";
 import ImageCarousel from "./components/ImageCarousel";
+import MatterportViewer from "./components/MatterPortViewer";
 
 
 export default function Home() {
@@ -15,6 +16,25 @@ export default function Home() {
     const Location2 = [27.79685292375124, -97.08761306786688] // Palmilla Beach Golf Club // 3 min drive // 5 min walk
     const Location3 = [27.80780654696457, -97.0863515205597] // The Phoenix Restaurant & Bar // 4 min drive // 18 min walk
     const Location4 = [27.67468665345304, -97.17639163670216] // Mustang Island State Park // 12 min drive // 3 hr walk
+
+    const [userReviews, setUserReviews] = useState([]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 900) {
+                setUserReviews(miniReviews);
+            } else {
+                setUserReviews(reviews)
+            }
+        };
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const reviews = [
         {
@@ -34,6 +54,24 @@ export default function Home() {
         },
     ];
 
+    const miniReviews = [
+        {
+            icon: "?",
+            text: "This hotel is absolutely beautiful and the pictures on the website is exactly how the room looked. It was an absolute pleasure to stay here!",
+            author: "John Doe",
+        },
+        {
+            icon: "?",
+            text: "We all had a wonderful stay, and the staff was helpful and friendly. Looking forward to our next trip to Port A and staying at the Peppervine.",
+            author: "Jane Smith",
+        },
+        {
+            icon: "?",
+            text: "From the initial consultation to the final result, everything was seamless.",
+            author: "Michael Johnson",
+        },
+    ]
+
     return (
         <>
             <NavBar />
@@ -42,7 +80,7 @@ export default function Home() {
                 <div id="hero">
                     {/* //! come back and put video in */}
                     {/* <video></video> */}
-                    <video id="heroVideo" autoPlay={true} muted={muted} loop webkit-playsinline playsinline>
+                    <video id="heroVideo" autoPlay={true} muted={muted} loop webkit-playsinline playsInline>
                         <source src={"https://firebasestorage.googleapis.com/v0/b/ethresources-1ed10.appspot.com/o/trim.F9D3BA54-F497-441B-A4C2-1FF2FB88A376.MOV?alt=media&token=12ca1bd4-04e9-4455-8301-f72051eca4d3"} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
@@ -60,16 +98,16 @@ export default function Home() {
                     </div>
                     <div id="heroContent">
                         <div id="heroTitle">
-                            <h3>the</h3>
-                            <h1>peppervine</h1>
+                            <div id="theLabel">103</div>
+                            <div id="mainTitle">peppervine</div>
                         </div>
                         <div id="heroSubtitle">
-                            <p>luxury hotel in new york city</p>
+                            <p>luxury vacation home in Port Aransas</p>
                         </div>
                     </div>
                 </div>
                 {/*============== Benifits ================== */}
-                <div id="benifitsContainer">
+                <div id="benifitsContainerLarge">
                     {/* Benifits 1 */}
                     <div className="benifitsContent" id="benifitOne">
                         <div className="benifitsInfoContainer col">
@@ -77,23 +115,60 @@ export default function Home() {
                             <p>Akin to having your own pied-à-terre on Manhattan’s Upper West Side, our spacious accommodations are impeccably styled with residential comforts and modern amenities.</p>
                             <ButtonComp fontSize="14px" wordColor="black" word="View House" fillerBG="none" borderFiller="black" />                        </div>
                         <div className="benifitsImgsContainer col">
-                            <img className="imgContainer" id="imgRight" src="https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp"></img>
+                            <img className="imgContainer" id="imgRight" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-41e0557b-513a-4bb8-a85c-280fb2230abe.jpg"></img>
                             <div className="imgBorder" id="imgRightBorder"></div>
                         </div>
                     </div>
                     {/* Benifits 2 */}
                     <div className="benifitsContent" id="benifitTwo">
                         <div className="benifitsImgsContainer col">
-                            <img className="imgContainer" id="imgLeft" src="https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp"></img>
+                            <img className="imgContainer" id="imgLeft" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-03626312-6a07-42c7-bdf1-df429c5fecf3.jpeg"></img>
                             <div className="imgBorder" id="imgLeftBorder"></div>
                         </div>
                         <div className="benifitsInfoContainer col">
-                            <h1>The Wallace Lounge</h1>
-                            <p>The Wallace Lounge is a sophisticated and elegant establishment, offering a unique and refined drinking and dining experience. With a stylish and modern design, the lounge provides a welcoming and relaxed atmosphere, making it the perfect spot for a night out with friends, a romantic evening, or a special occasion.</p>
+                            <h1>Endless Attractions</h1>
+                            <p>Our location places guests within easy reach of the endless culture, first-class entertainment and impressive landmarks that make Port Aransas an excellent destination.</p>
                             <ButtonComp fontSize="16px" wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
                         </div>
                     </div>
                     {/* Benifits 1 */}
+                </div>
+
+                <div id="benefitsContainerSmall">
+                    <div id="topSectionOuter">
+                        <div id="topSection">
+                            <div className="topImageSection">
+                                <img id="topImage" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-41e0557b-513a-4bb8-a85c-280fb2230abe.jpg"></img>
+                                <div className="topImageBorder">
+                                </div>
+                            </div>
+                            <div className="sectionHeader">
+                                An Invitation To Unwind
+                            </div>
+                            <div id="sectionFlex">
+                                <div className="sectionSub">
+                                    Our location places guests within easy reach of the endless culture, first-class entertainment and impressive landmarks that make Port Aransas an excellent destination.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bottomSectionOuter">
+                        <div id="bottomSection">
+                            <div className="topImageSection">
+                                <img id="topImage" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-03626312-6a07-42c7-bdf1-df429c5fecf3.jpeg"></img>
+                                <div className="topImageBorder">
+                                </div>
+                            </div>
+                            <div className="sectionHeader">
+                                Endless Attractions
+                            </div>
+                            <div id="sectionFlex">
+                                <div className="sectionSub">
+                                    Our location places guests within easy reach of the endless culture, first-class entertainment and impressive landmarks that make Port Aransas an excellent destination.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/*============== Carousel ================== */}
                 <div id="carouselContainer">
@@ -102,17 +177,23 @@ export default function Home() {
                     </div>
                     <ImageCarousel />
                 </div>
-                {/*============== Reviews ================== */}
-                <div id="reviewsContainer">
-                    <Slider reviews={reviews} />
+                <div id="virtualTour">
+                    <div id="carouselTitle">
+                        Virtual Tour
+                    </div>
+                    <MatterportViewer />
                 </div>
+                {/*============== Reviews ================== */}
+                {/* <div id="reviewsContainer">
+                    <Slider reviews={userReviews} />
+                </div> */}
                 {/*============== Location ================== */}
                 <div id="locationContainer">
                     {/* call api */}
                     <div id="mapContainer">
-                        {/* <div id="carouselTitle">
-                        Locations
-                    </div> */}
+                        <div id="carouselTitle">
+                            Locations
+                        </div>
                         <MapComponent mapCenter={mapCenter} />
                     </div>
                     <div id="localSiteContainer">
@@ -174,7 +255,17 @@ export default function Home() {
                     </div>
                 </div>
                 {/*============== Footer/Contact ================== */}
-                <Footer />
+                {/* <Footer /> */}
+                <div id="newFooter">
+                    <div id="newFooterInner">
+                        {/* <div id="phone">
+                            512-777-7777
+                        </div> */}
+                        <div id="email">
+                            103Peppervine@gmail.com
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );

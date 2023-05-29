@@ -6,7 +6,7 @@ import "./buttoncompStyle.css";
 export default function ButtonComp(props) {
   return (
     <>
-      <div id="button">
+      <div id="button" onClick={() => window.open('https://www.airbnb.com')}>
         <h5 style={{ color: props.wordColor, fontSize: props.fontSize}}>{props.word}</h5>
         <Border borderFiller={props.borderFiller} />
         <BorderBg fillerBG={props.fillerBG} />

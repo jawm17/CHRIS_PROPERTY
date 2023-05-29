@@ -2,6 +2,7 @@
      position: relative;
      height: 58px;
      width: 200px;
+     cursor: pointer;
  }
 
  #button h5 {
@@ -34,4 +35,38 @@
      transform: translate(-50%, -50%);
      height: 49px;
      width: 193px;
+ }
+
+ @media only screen and (max-width: 650px) {
+     #border {
+         height: 58px;
+         width: 139px;
+     }
+
+     #borderBg {
+         position: absolute;
+         z-index: 1;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         height: 49px;
+         width: 133px;
+     }
+
+     #button h5 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+   
+        font-family: josefin-sans, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+    }
  }

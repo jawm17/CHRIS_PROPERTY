@@ -32,7 +32,7 @@ const MapComponent = (props) => {
 
 
   return (
-    <MapContainer zoomControl={false} key={center.toString()} center={center} zoom={12} style={{ margin: "auto", width: '75%', height: '300px', borderRadius: 8 }} >
+    <MapContainer zoomControl={false} scrollWheelZoom={false} key={center.toString()} center={center} zoom={12} style={{ margin: "auto", width: '90%', height: '45vh', borderRadius: 8 }} >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {/* Add other map components, markers, etc. */}
       <Marker position={markerPosition} icon={markerIcon}>
