@@ -69,4 +69,36 @@
         font-size: 12px;
         font-weight: 400;
     }
+
+    #btnContainer #border {
+        height: 58px;
+        width: 199px;
+    }
+
+    #btnContainer  #borderBg {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 49px;
+        width: 193px;
+    }
+
+    #btnContainer #button h5 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+   
+        font-family: josefin-sans, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+    }
  }

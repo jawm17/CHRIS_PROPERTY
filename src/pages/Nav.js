@@ -50,7 +50,7 @@ export default function NavBar() {
                             peppervine
                         </div>
                     </div> */}
-                    <ButtonComp word="BOOK NOW" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller}/>
+                    <ButtonComp word="BOOK NOW" fillerBG={style.navStyle.fillerBG} borderFiller={style.navStyle.borderFiller} link="https://www.airbnb.com"/>
                 </div>
             </div>
         </nav>

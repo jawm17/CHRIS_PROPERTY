@@ -147,7 +147,7 @@ export default function Home() {
                             </div>
                             <div id="sectionFlex">
                                 <div className="sectionSub">
-                                Our spacious accommodations are impeccably styled with residential comforts and modern amenities. At the end of the day, when you are ready to retreat from the hustle and bustle, this is the ideal place to relax & recharge.
+                                    Our spacious accommodations are impeccably styled with residential comforts and modern amenities. At the end of the day, when you are ready to retreat from the hustle and bustle, this is the ideal place to relax & recharge.
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ export default function Home() {
                                 <div className="topImageBorder">
                                 </div>
                             </div>
-                            <div className="sectionHeader">
+                            <div className="sectionHeader" id="sectionHeader2">
                                 Endless Attractions
                             </div>
                             <div id="sectionFlex">
@@ -175,11 +175,17 @@ export default function Home() {
                     <div id="carouselTitle">
                         The House
                     </div>
+                    <div id="carouselSub">
+                        discover a new place
+                    </div>
                     <ImageCarousel />
                 </div>
                 <div id="virtualTour">
                     <div id="carouselTitle">
                         Virtual Tour
+                    </div>
+                    <div id="carouselSub">
+                        explore the space
                     </div>
                     <MatterportViewer />
                 </div>
@@ -193,6 +199,9 @@ export default function Home() {
                     <div id="mapContainer">
                         <div id="carouselTitle">
                             Locations
+                        </div>
+                        <div id="carouselSub">
+                            nearby destinations
                         </div>
                         <MapComponent mapCenter={mapCenter} />
                     </div>
@@ -240,6 +249,24 @@ export default function Home() {
 
                         </ul>
                     </div>
+                </div>
+                <div id="bookNowArea">
+                    <div id="nowTitle">
+                        Book Now
+                    </div>
+                    <div id="nowSub">
+                        103 Peppervine Ln
+                        Port Aransas, TX 78373
+                    </div>
+                    <div id="btnContainerGroup">
+                        <div id="btnContainer">
+                            <ButtonComp word="BOOK NOW ON AIRBNB" fillerBG={"white"} borderFiller={"white"} link="https://www.airbnb.com"/>
+                        </div>
+                        <div id="btnContainer">
+                            <ButtonComp word="BOOK NOW ON VRBO" fillerBG={"white"} borderFiller={"white"} link="https://www.vrbo.com"/>
+                        </div>
+                    </div>
+
                 </div>
                 {/*============== Footer Hero Slider ================== */}
                 <div id="footerHeroContainer">
