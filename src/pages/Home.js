@@ -113,7 +113,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>An Invitation To Unwind</h1>
                             <p>Our spacious accommodations are impeccably styled with residential comforts and modern amenities. At the end of the day, when you are ready to retreat from the hustle and bustle, this is the ideal place to relax & recharge.</p>
-                            <ButtonComp fontSize="14px" wordColor="black" word="View House" fillerBG="none" borderFiller="black" />                        </div>
+                            <ButtonComp location={"carouselContainer"} fontSize="14px" wordColor="black" word="View House" fillerBG="none" borderFiller="black" />                        </div>
                         <div className="benifitsImgsContainer col">
                             <img className="imgContainer" id="imgRight" src="https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-41e0557b-513a-4bb8-a85c-280fb2230abe.jpg"></img>
                             <div className="imgBorder" id="imgRightBorder"></div>
@@ -128,7 +128,7 @@ export default function Home() {
                         <div className="benifitsInfoContainer col">
                             <h1>Endless Attractions</h1>
                             <p>Our location places guests within easy reach of the endless culture, first-class entertainment and impressive landmarks that make Port Aransas an excellent destination.</p>
-                            <ButtonComp fontSize="16px" wordColor="white" word="View House" fillerBG="none" borderFiller="white" />
+                            <ButtonComp location={"locationContainer"} fontSize="16px" wordColor="white" word="View Destinations" fillerBG="none" borderFiller="white" />
                         </div>
                     </div>
                     {/* Benifits 1 */}

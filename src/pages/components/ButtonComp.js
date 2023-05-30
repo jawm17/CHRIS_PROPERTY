@@ -6,7 +6,7 @@ import "./buttoncompStyle.css";
 export default function ButtonComp(props) {
   return (
     <>
-      <div id="button" onClick={() => window.open(props.link)}>
+      <div id="button" onClick={props.link ? () => window.open(props.link) : () => document.getElementById(props.location).scrollIntoView({ behavior: 'smooth' })}>
         <h5 style={{ color: props.wordColor, fontSize: props.fontSize}}>{props.word}</h5>
         <Border borderFiller={props.borderFiller} />
         <BorderBg fillerBG={props.fillerBG} />
