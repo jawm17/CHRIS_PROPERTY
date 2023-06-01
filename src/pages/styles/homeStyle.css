@@ -10,7 +10,7 @@
 #hero {
   width: 100vw;
   height: 100vh;
-  background: url(https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-3f1f51f6-bc3a-4d28-bacf-b0c71161c7e3.jpeg) no-repeat;
+  background: url(https://cdn.aryeo.com/listings/103-peppervine-ln-port-aransas-tx-78373-4272527/resized/large/large-cc72cba3-fcb6-4b85-b2a0-fe62cab2850a.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -201,11 +201,11 @@
 }
 
 #imgRight {
-  background: url(https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp) no-repeat;
+  /* background: url(https://thewallace.com/hubfs/Website/Webp/img-invitation-to-unwind.webp) no-repeat; */
 }
 
 #imgLeft {
-  background: url(https://thewallace.com/hs-fs/hubfs/DSC06630-2%201.png?width=1262&height=1400&name=DSC06630-2%201.png) no-repeat;
+  /* background: url(https://thewallace.com/hs-fs/hubfs/DSC06630-2%201.png?width=1262&height=1400&name=DSC06630-2%201.png) no-repeat; */
 }
 
 /* border */
