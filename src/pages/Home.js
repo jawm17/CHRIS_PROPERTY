@@ -275,7 +275,7 @@ export default function Home() {
                     </div>
                     <div id="btnContainerGroup">
                         <div id="btnContainer">
-                            <ButtonComp word="BOOK NOW ON VACASA" fillerBG={"white"} borderFiller={"white"} link="https://www.airbnb.com" />
+                            <ButtonComp word="BOOK NOW ON VACASA" fillerBG={"white"} borderFiller={"white"} link="https://www.vacasa.com/unit/62641" />
                         </div>
                         {/* <div id="btnContainer">
                             <ButtonComp word="BOOK NOW ON VRBO" fillerBG={"white"} borderFiller={"white"} link="https://www.vrbo.com" />
