@@ -32,20 +32,25 @@ const MapComponent = (props) => {
 
 
   return (
-    <MapContainer zoomControl={false} scrollWheelZoom={false} key={center.toString()} center={center} zoom={12} style={{ margin: "auto", width: '90%', height: '45vh', borderRadius: 8 }} >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {/* Add other map components, markers, etc. */}
-      <Marker position={markerPosition} icon={markerIcon}>
-      </Marker>
-      <Marker position={Location1} icon={markerIcon}>
-      </Marker>
-      {/* <Marker position={Location2} icon={markerIcon}>
+    <div id="blocker" style={{ margin: "auto", width: '90%', height: '45vh', borderRadius: 8, position: "relative" }} >
+      <div id="blocker2">
+
+      </div>
+      <MapContainer zoomControl={false} scrollWheelZoom={false} key={center.toString()} center={center} zoom={12} style={{ width: '100%', height: '100%', borderRadius: 8, position: "relative" }} >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {/* Add other map components, markers, etc. */}
+        <Marker position={markerPosition} icon={markerIcon}>
+        </Marker>
+        <Marker position={Location1} icon={markerIcon}>
+        </Marker>
+        {/* <Marker position={Location2} icon={markerIcon}>
       </Marker> */}
-      <Marker position={Location3} icon={markerIcon}>
-      </Marker>
-      <Marker position={Location4} icon={markerIcon}>
-      </Marker>
-    </MapContainer>
+        <Marker position={Location3} icon={markerIcon}>
+        </Marker>
+        <Marker position={Location4} icon={markerIcon}>
+        </Marker>
+      </MapContainer>
+    </div>
   );
 };
 

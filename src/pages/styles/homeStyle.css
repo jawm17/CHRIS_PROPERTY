@@ -296,9 +296,9 @@
 
 #bottomSectionOuter {
   background-color: #b7a18b;
-    background-color: #dca975;
-     /* peach #ff9f76*/
-      /* ligther #dca975 */
+  background-color: #dca975;
+  /* peach #ff9f76*/
+  /* ligther #dca975 */
   padding-top: 50px;
   margin-top: 80px;
   padding-bottom: 80px;
@@ -371,11 +371,11 @@
 }
 
 #carouselSub {
-    text-align: center;
-    margin-top: 0px;
-    font-size: 18px;
-      margin-bottom: 50px;
-      letter-spacing: 4px;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 18px;
+  margin-bottom: 50px;
+  letter-spacing: 4px;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -392,13 +392,45 @@
     text-align: center;
     margin-bottom: 50px;
   }
+
   #carouselSub {
     text-align: center;
     margin-top: -50px;
     font-size: 18px;
-      margin-bottom: 50px;
-      letter-spacing: 4px;
+    margin-bottom: 35px;
+    letter-spacing: 4px;
+  }
 }
+
+#featuresContainer {
+  position: relative;
+  width: 90vw;
+  border-radius: 8px;
+  margin-left: 5vw;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+#featuresList {
+  text-align: center;
+}
+
+#featuresList li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #featuresList {
+    text-align: left;
+  }
+  #featuresContainer {
+    position: relative;
+    width: 90vw;
+    border-radius: 8px;
+    margin-left: 5vw;
+    margin-top: 25px;
+    margin-bottom: 0px;
+  }
 }
 
 /* ============= */
@@ -407,7 +439,7 @@
 #locationContainer {
   position: relative;
   width: 100%;
-  margin-top: 75px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -415,6 +447,15 @@
 #mapContainer {
   width: 100vw;
   padding-bottom: 50px;
+}
+
+#blocker2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 500;
+  border-radius: 8px;
 }
 
 .map-points-of-interest {
@@ -427,6 +468,7 @@
   max-width: 944px;
   padding: 0;
 }
+
 /* sites */
 #localSiteContainer {
   position: relative;
@@ -511,17 +553,18 @@
     font-family: josefin-sans, sans-serif;
     font-weight: 400;
   }
+
   .map-points-of-interest li {
     border-bottom: 0.5px solid rgba(0, 0, 0, .2);
     padding-bottom: 10px;
     position: relative;
   }
-  
+
 }
 
 
 #virtualTour {
-  padding-top: 75px;
+  padding-top: 50px;
   padding-bottom: 0px;
 }
 
@@ -554,15 +597,13 @@
 #bookNowArea {
   width: 100vw;
   background-color: #dca975;
- /* peach #ff9f76*/
-      /* ligther #dca975 */
+  /* peach #ff9f76*/
+  /* ligther #dca975 */
   min-height: 400px;
   text-align: center;
 }
 
-#btnContainer {
- 
-}
+#btnContainer {}
 
 #btnContainerGroup {
   display: flex;
@@ -588,9 +629,10 @@
 }
 
 @media only screen and (max-width: 1250px) {
- #nowTitle {
-  font-size: 36px;
- }
+  #nowTitle {
+    font-size: 36px;
+    padding-top: 100px;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -601,8 +643,12 @@
     margin-top: 30px;
     margin-left: -30px;
   }
-
+  #nowTitle {
+    font-size: 36px;
+    padding-top: 110px;
+  }
   #btnContainer {
+    margin-top: 0px;
     margin-bottom: 15px;
   }
 }

@@ -180,6 +180,21 @@ export default function Home() {
                     </div>
                     <ImageCarousel />
                 </div>
+
+                <div id="featuresContainer">
+                    <ul id="featuresList">
+                        <li> • Comfortably sleeps 9 people</li>
+                        <li> • 3 equal primary bedrooms. All with private ensuite bathrooms</li>
+                        <li> • Located directly on the Palmilla Golf Course</li>
+                        <li> • 5 min walk to the beach</li>
+                        <li> • 2 min walk to the new Palmilla pool | 5 min walk to the original Palmilla pool</li>
+                        <li> • 3 min walk to Reds at Palmilla restaurant</li>
+                        <li> • Fully stocked chef's kitchen</li>
+                        <li> • Outdoor grill</li>
+                    </ul>
+                </div>
+
+
                 <div id="virtualTour">
                     <div id="carouselTitle">
                         Virtual Tour
@@ -260,11 +275,11 @@ export default function Home() {
                     </div>
                     <div id="btnContainerGroup">
                         <div id="btnContainer">
-                            <ButtonComp word="BOOK NOW ON AIRBNB" fillerBG={"white"} borderFiller={"white"} link="https://www.airbnb.com"/>
+                            <ButtonComp word="BOOK NOW ON VACASA" fillerBG={"white"} borderFiller={"white"} link="https://www.airbnb.com" />
                         </div>
-                        <div id="btnContainer">
-                            <ButtonComp word="BOOK NOW ON VRBO" fillerBG={"white"} borderFiller={"white"} link="https://www.vrbo.com"/>
-                        </div>
+                        {/* <div id="btnContainer">
+                            <ButtonComp word="BOOK NOW ON VRBO" fillerBG={"white"} borderFiller={"white"} link="https://www.vrbo.com" />
+                        </div> */}
                     </div>
 
                 </div>
